@@ -11,7 +11,7 @@
 mount_point="${HOME}/mainhost"
 
 if mount | grep "${mount_point}" >/dev/null; then
-    echo "Main host home directory already mounted!"
+    echo "Main host home directory is already mounted!"
 else
     if [ "$(whoami)" = 'root' ]; then
         # Prevents remounting of directory while using sudo
