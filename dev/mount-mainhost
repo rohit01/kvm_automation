@@ -2,8 +2,10 @@
 #
 # Mount host home directory in development box
 # Steps to install:
-# 1. Add this file as a executable command: /usr/bin/mount-mainhost
-# 2. Append .bashrc file with this line: '/usr/bin/mount-mainhost'
+# 1. Append the main host address in /etc/hosts:
+#    $ echo '192.168.122.1   mainhost' >> /etc/hosts
+# 2. Add this file as a executable command: /usr/bin/mount-mainhost
+# 3. Append .bashrc file with this line: '/usr/bin/mount-mainhost'
 #
 
 mount_point="${HOME}/mainhost"
