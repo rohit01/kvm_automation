@@ -13,6 +13,10 @@ mount_point="${HOME}/mainhost"
 if mount | grep "${mount_point}" >/dev/null; then
     echo "Main host home directory already mounted!"
 else
+    if [ "$(whoami)" = 'root' ]; then
+        # Prevents remounting of directory while using sudo
+        exit 0
+    fi
     mkdir -p "${mount_point}"
     sshfs rohit@mainhost: "${mount_point}"
     if mount | grep "${mount_point}" >/dev/null; then
