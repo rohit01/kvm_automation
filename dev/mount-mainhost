@@ -19,7 +19,7 @@ else
     fi
     mkdir -p "${mount_point}"
     nohup sshfs rohit@mainhost: "${mount_point}" \
-        -o reconnect,idmap=user,dev,suid > /dev/null
+        -o reconnect,idmap=user,allow_other,dev,suid > /dev/null
     if mount | grep "${mount_point}" >/dev/null; then
         echo "Main host home directory successfully mounted on ${mount_point}"
     else
